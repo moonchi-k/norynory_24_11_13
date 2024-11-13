@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+## Norybang | 어린이 놀이시설 정보제공 서비스
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### 📝 개요
 
-In the project directory, you can run:
+- 본 프로젝트는 "전국 어린이 놀이시설 정보 API"를 활영하여, 부모님들이 자녀와 함께 방문할 수 있는 안전하고 적합한 놀이시설 정보를 손쉽게 찾을 수 있는 웹사이트를 개발하는 것을 목표로 한다. 최근 "노키즈존"의 확산으로, 어린이와 함께 갈 수 있는 장소가 점점 줄어들고 있는 상황에서, 본 앱은 어린이와 함께 방문할 수 있는 놀이시설 정보를 제공하여 부모들에게 실질적인 도움을 줄 수 있다.
 
-### `npm start`
+### ✅ 목표
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 어린이와 함께 방문할 수 있는 안전하고 유익한 놀이시설 정보를 제공하여, 보호자들이 어린이들이 놀기에 적합한 장소를 쉽게 찾을 수 있도록 한다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ⏰ 작업계획표
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| 날짜     | 내용                                                                                                                     |
+| -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 24.11.13 | 기획 (제공 정보 범위 설정, 페이지 구성, 기능 구성) & 래퍼런스 리서치 & 와이어프레임 구성                                 |
+| 24.11.14 | 디자인 기획 & npm 설치 & Router 설정 & 전체 페이지 컴포넌트 구성 & Header, Footer 구성 & Helmet 구성 & Globalstyled 설정 |
+| 24.11.15 | api 연결                                                                                                                 |
+| 24.11.16 | UI 구성                                                                                                                  |
+| 24.11.18 | 기능 구현                                                                                                                |
+| 24.11.19 | 기능 구현, 유지 보수 및 배포                                                                                             |
+|          |
