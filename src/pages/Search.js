@@ -2,6 +2,52 @@ import { useState } from "react";
 // import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { totalInfo } from "../testapi";
+import Wrapper from "../components/Wrapper";
+import styled from "styled-components";
+import LogoImg from "../components/LogoImg.png";
+import SearchImg from "../components/SearchImg.png";
+const Logo = styled.div`
+  background: url(${LogoImg}) no-repeat center / cover;
+  width: 178px;
+  height: 32px;
+  margin: 0 auto;
+  margin-bottom: 52px;
+`;
+const Form = styled.form`
+  all: unset;
+  position: relative;
+  /* text-align: center; */
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 2px;
+    margin-bottom: 14px;
+  }
+
+  input {
+    width: 100%;
+    height: 60px;
+    background-color: #f99e31;
+    opacity: 0.2;
+    border-radius: 80px;
+    border: none;
+    padding: 20px;
+    &::placeholder {
+      font-size: 14px;
+      color: #333333;
+    }
+  }
+
+  button {
+    all: unset;
+    width: 24px;
+    height: 24px;
+    background: url(${SearchImg}) no-repeat center / cover;
+    position: absolute;
+    right: 20px;
+    top: 52px;
+  }
+`;
 
 const Search = () => {
   const [searchData, setSearchData] = useState([]);
@@ -41,29 +87,31 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSearchResult)}>
+    <Wrapper>
+      <Logo></Logo>
+      <Form onSubmit={handleSubmit(onSearchResult)}>
+        <h3>가고 싶은 곳을 검색해보세요!</h3>
         <input
           type="text"
           {...register("keyword", { required: true })}
-          placeholder="검색어를 입력하세요"
+          placeholder="Ex) 해운대, 기장.... "
         />
+        <button type="submit"></button>
         {errors.keyword && <span>검색어를 입력해 주세요.</span>}
-        <button type="submit">검색</button>
-      </form>
+      </Form>
 
       {/* 검색 결과를 출력 */}
       <div>
         <h3>검색된 장소:</h3>
         <ul>
-          {searchData.map((item) => (
-            <li key={item.index}>
+          {searchData.map((item, index) => (
+            <li key={index}>
               <strong>{item.title}</strong> - {item.address}
             </li>
           ))}
         </ul>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
