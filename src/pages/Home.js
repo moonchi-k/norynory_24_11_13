@@ -1,72 +1,59 @@
-import { useForm } from "react-hook-form";
-import { totalInfo } from "../testapi";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import { useState } from "react";
-// import { totalInfo } from "../testapi";
+import { GlobalStyled } from "../GlobalStyled";
+import BgsImg from "./BgImg.png";
+import { BrowserRouter, HashRouter, Link } from "react-router-dom";
 
-const Form = styled.form`
-  input {
+const Wrap = styled.div`
+  max-width: 450px;
+  height: 90vh;
+  /* background-color: #fff; */
+  margin: auto;
+  background: url(${BgsImg}) no-repeat center / cover;
+  padding-top: 135px;
+`;
+
+const Title = styled.div`
+  margin: 0 auto;
+  text-align: center;
+  /* width: 50%; */
+  h2 {
+    font-family: "Bagel Fat One", system-ui;
+    color: #f1592a;
+    font-weight: 600;
+    font-size: 50px;
+    letter-spacing: 1px;
+  }
+
+  button {
     all: unset;
-    width: 100%;
-    height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-sizing: border-box;
-    padding: 0 20px;
-    &::placeholder {
-      font-size: 18px;
-    }
+    background-color: #f99e31;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 30px;
   }
 `;
 
 const Home = () => {
-  const [searchData, setSearchData] = useState();
-  const [keyData, setKeyData] = useState("");
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const onSearchResult = async (data) => {
-    const { keyword } = data;
-    try {
-      const allData = await totalInfo();
-      const dataAddIds = allData.map((item, index) => ({
-        ...item,
-        id: index,
-      }));
-
-      const searchResult = dataAddIds.filter((item) =>
-        item.address.includes(keyword)
-      );
-
-      setSearchData(searchResult);
-      setKeyData(keyword);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
-    <Form onSubmit={handleSubmit(onSearchResult)}>
-      <input
-        {...register("keyword")}
-        type="text"
-        placeholder="어디로 갈까용?"
-      />
-    </Form>
+    <HashRouter>
+      <Wrap>
+        <Title>
+          <h2> NoryNory!</h2>
+        </Title>
+        <Link to={"/search"}>
+          <button>
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              style={{ width: "25px", height: "25px", color: "white" }}
+            />
+          </button>
+        </Link>
+      </Wrap>
+    </HashRouter>
   );
 };
 
 export default Home;
-
-//   const onSearch = async (data) => {
-//     const { search: keyword } = data;
-
-//     try {
-//       const { results } = await totalInfo(keyword);
-//       console.log(results);
-//     } catch (error) {
-//       console.log("error: " + error);
-//     }
-//   };
