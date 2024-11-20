@@ -95,6 +95,7 @@ const Result = () => {
       <Link to={"/"}>
         <Logo></Logo>
       </Link>
+
       <Title>
         <h3>
           <span>"{keyword}"</span>에 대한 검색 결과{" "}
