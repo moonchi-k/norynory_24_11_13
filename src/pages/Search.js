@@ -6,6 +6,9 @@ import Wrapper from "../components/Wrapper";
 import styled from "styled-components";
 import LogoImg from "../components/LogoImg.png";
 import SearchImg from "../components/SearchImg.png";
+import { Link } from "react-router-dom";
+import Router from "../Router";
+
 const Logo = styled.div`
   background: url(${LogoImg}) no-repeat center / cover;
   width: 178px;
@@ -17,6 +20,8 @@ const Form = styled.form`
   all: unset;
   position: relative;
   /* text-align: center; */
+  display: block;
+  width: 100%;
   h3 {
     font-size: 22px;
     font-weight: 600;
@@ -34,7 +39,7 @@ const Form = styled.form`
     padding: 20px;
     &::placeholder {
       font-size: 14px;
-      color: #333333;
+      color: #000000;
     }
   }
 
@@ -46,6 +51,7 @@ const Form = styled.form`
     position: absolute;
     right: 20px;
     top: 52px;
+    cursor: pointer;
   }
 `;
 
@@ -88,7 +94,9 @@ const Search = () => {
 
   return (
     <Wrapper>
-      <Logo></Logo>
+      <Link to={"/"}>
+        <Logo></Logo>
+      </Link>
       <Form onSubmit={handleSubmit(onSearchResult)}>
         <h3>가고 싶은 곳을 검색해보세요!</h3>
         <input
@@ -96,13 +104,15 @@ const Search = () => {
           {...register("keyword", { required: true })}
           placeholder="Ex) 해운대, 기장.... "
         />
-        <button type="submit"></button>
+        <Link to={"/detail"}>
+          <button type="submit"></button>
+        </Link>
         {errors.keyword && <span>검색어를 입력해 주세요.</span>}
       </Form>
 
       {/* 검색 결과를 출력 */}
       <div>
-        <h3>검색된 장소:</h3>
+        {/* <h3>검색된 장소:</h3> */}
         <ul>
           {searchData.map((item, index) => (
             <li key={index}>
