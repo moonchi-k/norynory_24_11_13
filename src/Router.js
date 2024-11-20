@@ -1,7 +1,7 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import Detail from "./pages/Detail";
+import Result from "./pages/Result";
 
 const Router = () => {
   return (
@@ -9,7 +9,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </HashRouter>
   );

@@ -6,7 +6,7 @@ import Wrapper from "../components/Wrapper";
 import styled from "styled-components";
 import LogoImg from "../components/LogoImg.png";
 import SearchImg from "../components/SearchImg.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Router from "../Router";
 
 const Logo = styled.div`
@@ -58,6 +58,8 @@ const Form = styled.form`
 const Search = () => {
   const [searchData, setSearchData] = useState([]);
   const [keyData, setKeyData] = useState("");
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -87,6 +89,8 @@ const Search = () => {
 
       setSearchData(searchResult); // 검색된 결과로 상태 업데이트
       setKeyData(keyword); // 키워드 상태 업데이트
+      console.log(searchResult);
+      navigate("/result", { state: { key: keyword, data: searchResult } });
     } catch (error) {
       console.log("검색 오류:", error);
     }
@@ -104,9 +108,9 @@ const Search = () => {
           {...register("keyword", { required: true })}
           placeholder="Ex) 해운대, 기장.... "
         />
-        <Link to={"/detail"}>
-          <button type="submit"></button>
-        </Link>
+
+        <button type="submit"></button>
+
         {errors.keyword && <span>검색어를 입력해 주세요.</span>}
       </Form>
 
