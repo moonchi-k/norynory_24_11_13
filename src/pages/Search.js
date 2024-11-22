@@ -7,7 +7,7 @@ import styled from "styled-components";
 import LogoImg from "../components/LogoImg.png";
 import SearchImg from "../components/SearchImg.png";
 import { Link, useNavigate } from "react-router-dom";
-import Router from "../Router";
+import Loading from "../components/Loading";
 
 const Logo = styled.div`
   background: url(${LogoImg}) no-repeat center / cover;
@@ -32,15 +32,21 @@ const Form = styled.form`
   input {
     width: 100%;
     height: 60px;
-    background-color: #f99e31;
-    opacity: 0.2;
+    background-color: #feecd6;
     border-radius: 80px;
     border: none;
     padding: 20px;
+    margin-bottom: 20px;
     &::placeholder {
       font-size: 14px;
-      color: #000000;
+      color: gray;
+      border: none;
     }
+    color: #333;
+    font-size: 16px;
+  }
+  input:focus {
+    outline: none;
   }
 
   button {
@@ -53,13 +59,17 @@ const Form = styled.form`
     top: 52px;
     cursor: pointer;
   }
+
+  span {
+    color: #666;
+  }
 `;
 
 const Search = () => {
   const [searchData, setSearchData] = useState([]);
   const [keyData, setKeyData] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
   const {
     register,
     handleSubmit,
@@ -67,6 +77,8 @@ const Search = () => {
   } = useForm();
   const onSearchResult = async (data) => {
     const { keyword } = data;
+
+    setLoading(true);
     try {
       const noryAllData = await totalInfo(); // API 호출 후 데이터 받기
       console.log("noryAllData:", noryAllData); // noryAllData의 구조 확인
@@ -74,6 +86,7 @@ const Search = () => {
       // 데이터가 배열인지 확인
       if (!Array.isArray(noryAllData)) {
         console.error("noryAllData는 배열이 아닙니다.");
+        setLoading(false);
         return;
       }
 
@@ -89,7 +102,9 @@ const Search = () => {
 
       setSearchData(searchResult); // 검색된 결과로 상태 업데이트
       setKeyData(keyword); // 키워드 상태 업데이트
-      console.log(searchResult);
+
+      setLoading(false);
+
       navigate("/result", { state: { key: keyword, data: searchResult } });
     } catch (error) {
       console.log("검색 오류:", error);
@@ -114,17 +129,7 @@ const Search = () => {
         {errors.keyword && <span>검색어를 입력해 주세요.</span>}
       </Form>
 
-      {/* 검색 결과를 출력 */}
-      <div>
-        {/* <h3>검색된 장소:</h3> */}
-        <ul>
-          {searchData.map((item, index) => (
-            <li key={index}>
-              <strong>{item.title}</strong> - {item.address}
-            </li>
-          ))}
-        </ul>
-      </div>
+      {loading && <Loading />}
     </Wrapper>
   );
 };

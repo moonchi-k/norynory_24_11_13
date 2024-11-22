@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BgsImg from "./BgImg.png";
+import BgsImg from "./BgCopyright.png";
 
 const Container = styled.div`
   max-width: 450px;
@@ -10,6 +10,7 @@ const Container = styled.div`
   /* margin: 0 30px 0 30px; */
   margin: auto;
   padding: 50px 30px 0 30px;
+  position: relative;
 `;
 const Wrapper = ({ children }) => {
   return <Container>{children}</Container>;
