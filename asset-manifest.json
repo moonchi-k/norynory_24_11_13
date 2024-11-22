@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/norybang_24_11_13/static/js/main.24a57110.js",
-    "static/media/BgCopyright.png": "/norybang_24_11_13/static/media/BgCopyright.9759fa90d1ad86a2df1a.png",
-    "index.html": "/norybang_24_11_13/index.html",
-    "main.24a57110.js.map": "/norybang_24_11_13/static/js/main.24a57110.js.map"
+    "main.js": "/norynory_24_11_13/static/js/main.fbf76771.js",
+    "static/media/BgCopyright.png": "/norynory_24_11_13/static/media/BgCopyright.9759fa90d1ad86a2df1a.png",
+    "index.html": "/norynory_24_11_13/index.html",
+    "main.fbf76771.js.map": "/norynory_24_11_13/static/js/main.fbf76771.js.map"
   },
   "entrypoints": [
-    "static/js/main.24a57110.js"
+    "static/js/main.fbf76771.js"
   ]
 }
