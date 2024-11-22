@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/norynory_24_11_13/static/js/main.2fbcc46d.js",
+    "main.js": "/norynory_24_11_13/static/js/main.1cee2acc.js",
     "static/media/BgCopyright.png": "/norynory_24_11_13/static/media/BgCopyright.9759fa90d1ad86a2df1a.png",
     "index.html": "/norynory_24_11_13/index.html",
-    "main.2fbcc46d.js.map": "/norynory_24_11_13/static/js/main.2fbcc46d.js.map"
+    "main.1cee2acc.js.map": "/norynory_24_11_13/static/js/main.1cee2acc.js.map"
   },
   "entrypoints": [
-    "static/js/main.2fbcc46d.js"
+    "static/js/main.1cee2acc.js"
   ]
 }
